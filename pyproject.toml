@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fitplan"
+version = "0.0.0"
+description = ""
+authors = ["Antonello Izzi <ai9840.github@gmail.com>"]
+readme = "README.md"
+packages = [{include = "fitplan", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"

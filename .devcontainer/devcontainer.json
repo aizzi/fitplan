@@ -1,0 +1,16 @@
+{
+    "name": "fitplan",
+
+    "image": "aizzi/devcontainers:streamlit.1.30.0",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vivaxy.vscode-conventional-commits",
+                "ms-python.vscode-pylance",
+                "ms-python.python",
+                "ms-azuretools.vscode-docker",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    }
+}
