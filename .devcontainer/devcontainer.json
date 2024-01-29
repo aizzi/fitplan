@@ -9,7 +9,8 @@
                 "ms-python.vscode-pylance",
                 "ms-python.python",
                 "ms-azuretools.vscode-docker",
-                "tamasfe.even-better-toml"
+                "tamasfe.even-better-toml",
+                "jebbs.plantuml"
             ]
         }
     }
