@@ -1,0 +1,11 @@
+@startuml
+class athlete {
+    id
+    name
+    birthday
+    create()
+    read()
+    update()
+    delete()
+}
+@enduml

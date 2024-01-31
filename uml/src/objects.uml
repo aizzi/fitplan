@@ -1,0 +1,7 @@
+@startuml
+object athlete {
+    id : <uuid> (generated)
+    name : <string>
+    birthday : <date> (dd/mm/yyyy)
+}
+@enduml
