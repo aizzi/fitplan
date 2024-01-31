@@ -1,7 +1,10 @@
 {
     "name": "fitplan",
 
-    "image": "aizzi/devcontainers:streamlit.1.30.0",
+    "image": "aizzi/devcontainers:fitplan",
+    //"build": {
+    //    "dockerfile": "Dockerfile"
+    //},
     "customizations": {
         "vscode": {
             "extensions": [
@@ -13,5 +16,6 @@
                 "jebbs.plantuml"
             ]
         }
-    }
+    },
+    "postCreateCommand": "poetry install --all-extras"
 }
