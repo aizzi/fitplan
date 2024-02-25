@@ -3,5 +3,6 @@
     "plantuml.exportIncludeFolderHeirarchy": false,
     "plantuml.exportOutDir": "uml/diagrams",
     "plantuml.exportSubFolder": false,
-    "plantuml.render": "Local"
+    "plantuml.render": "Local",
+    "remote.autoForwardPortsFallback": 0
 }
