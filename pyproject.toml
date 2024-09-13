@@ -8,13 +8,13 @@ packages = [{include = "fitplan", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-sqlalchemy = "^2.0.27"
-streamlit = "^1.31.1"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
+sqlalchemy = "2.0.34"
+streamlit = "1.38.0"
 
 [tool.poetry.extras]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.3"
 
 [tool.poetry-dynamic-versioning]
 enable = true

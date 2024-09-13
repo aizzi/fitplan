@@ -1,0 +1,48 @@
+FROM ubuntu:24.04
+ARG PYTHON_VERSION="3.12.6"
+ARG PLANTUML_VERSION="1.2024.7"
+ARG POETRY_VERSION="1.8"
+ENV DEBIAN_FRONTEND noninteractive
+
+# Update and upgrade
+RUN apt-get update -y \
+    && apt-get upgrade -y
+
+# Install Ubuntu server
+#RUN apt-get update -y \
+#    && apt-get install -y --no-install-recommends ubuntu-server
+RUN apt-get install -y --no-install-recommends ubuntu-server
+
+# Install Python 3.12
+# Instruction from https://stackoverflow.com/questions/75159821/installing-python-3-11-1-on-a-docker-container
+RUN apt-get install -y --no-install-recommends apt-utils build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev pkg-config wget
+RUN cd /usr/src \
+    && wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz \
+    && tar -xzf Python-${PYTHON_VERSION}.tgz \
+    && cd Python-${PYTHON_VERSION} \
+    && ./configure --enable-optimizations \
+    && make altinstall \
+    && rm /usr/src/Python-${PYTHON_VERSION}.tgz
+RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python3.12 1
+
+# Install pip and pipx
+RUN apt-get install -y --no-install-recommends python3-pip pipx \
+    && pipx ensurepath
+
+# Install the environment to support plantuml diagrams
+RUN apt-get install -y --no-install-recommends default-jre graphviz plantuml \
+    && wget -O /usr/share/plantuml/plantuml.jar https://github.com/plantuml/plantuml/releases/download/v${PLANTUML_VERSION}/plantuml.jar
+
+# Install poetry
+ENV PATH /root/.local/bin:$PATH
+RUN pipx install poetry==${POETRY_VERSION} \
+    && poetry completions bash >> ~/.bash_completion \
+    && poetry self add "poetry-dynamic-versioning[plugin]"
+
+# Install sqlite3
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends sqlite3
+
+# Clean up
+RUN apt-get purge -y imagemagick imagemagick-6-common \
+    && apt-get clean

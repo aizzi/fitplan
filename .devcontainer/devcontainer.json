@@ -1,10 +1,10 @@
 {
     "name": "fitplan",
 
-    "image": "aizzi/devcontainers:fitplan",
-    //"build": {
-    //    "dockerfile": "Dockerfile"
-    //},
+    //"image": "aizzi/devcontainers:fitplan",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
