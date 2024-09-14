@@ -2,6 +2,6 @@
 object athlete {
     id : <uuid> (generated)
     name : <string>
-    birthday : <date> (dd/mm/yyyy)
+    birthday : <date> (yyyy/mm/dd)
 }
 @enduml

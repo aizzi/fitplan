@@ -1,10 +1,11 @@
 @startuml
-class athlete {
+class Athletes {
     id
     name
     birthday
-    create()
-    read()
+    createNew()
+    getByName()
+    getAll()
     update()
     delete()
 }
