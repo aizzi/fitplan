@@ -1,12 +1,11 @@
 @startuml
+title "Fitplan Class Model"
+
 class Athletes {
     id
     name
     birthday
-    createNew()
-    getByName()
     getAll()
-    update()
-    delete()
+    set()
 }
 @enduml

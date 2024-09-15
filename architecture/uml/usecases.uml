@@ -1,0 +1,17 @@
+@startuml
+title "Fitplan Use Case Model"
+
+skinparam actorStyle awesome
+
+actor Athlete <<Human>>
+note right of Athlete : Uses the application to train.
+
+actor Trainer <<Human>>
+note right of Trainer : An Athlete that train other Athletes.
+
+usecase (UC01: Select Athlete) as (UC01)
+
+Athlete -- (UC01)
+Trainer --|> Athlete : <<extend>>
+
+@enduml

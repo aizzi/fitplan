@@ -1,4 +1,6 @@
 @startuml
+title "Fitplan Object Model"
+
 object athlete {
     id : <uuid> (generated)
     name : <string>

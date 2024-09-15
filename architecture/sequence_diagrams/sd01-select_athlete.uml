@@ -1,0 +1,16 @@
+@startuml
+title Fitplan Sequence Diagram\nSD01 - Select User
+
+actor User
+participant Home
+database Database
+participant Session 
+
+User -> Home : Load Page
+Home -> Database : Athlete.getAll()
+Database --> Home : [athletes]
+Home -> Home : Show athletes
+User -> Home : Select athlete
+Home -> Session : Athlete.setCurrent()
+Session -> Session : set currentAthlete
+@enduml

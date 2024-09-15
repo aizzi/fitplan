@@ -1,0 +1,14 @@
+@startuml
+title "Fitplan Component Model"
+
+package "FitPlan" as app {
+    component Home
+    interface HTTP
+}
+component Browser
+database SQLite
+
+Browser -right- HTTP
+HTTP - Home
+Home <--> SQLite : <session_state.db>
+@enduml
